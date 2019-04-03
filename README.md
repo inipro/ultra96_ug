@@ -1,1 +1,1 @@
-# ultra96_ug
+# Ultra96 Training Kit User Guide
