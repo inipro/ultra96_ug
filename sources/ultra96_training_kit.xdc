@@ -22,8 +22,8 @@ set_property PACKAGE_PIN D1   [get_ports {pmod_c[5]               }];  # "D1.DSI
 set_property PACKAGE_PIN E1   [get_ports {pmod_c[4]               }];  # "E1.DSI_D2_P"
 set_property PACKAGE_PIN C3   [get_ports {pmod_c[7]               }];  # "C3.DSI_D3_N"
 set_property PACKAGE_PIN D3   [get_ports {pmod_c[6]               }];  # "D3.DSI_D3_P"
-# Bank 26
-set_property PACKAGE_PIN E8   [get_ports {clk	                  }];  # "E8.CSI0_MCLK"
+
+set_property PACKAGE_PIN L2   [get_ports {clk	                  }];  # "L2.CSI0_D3_P"
 
 
 # ----------------------------------------------------------------------------

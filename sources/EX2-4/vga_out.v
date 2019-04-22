@@ -25,10 +25,11 @@ module vga_out(
 	output [7:0] pmod_a, pmod_b
     );
 
+    wire pclk;
 	reg [25:0] cnt;
-	integer    hcnt, vcnt, hc, vc, hd, vd;
+	integer hcnt, vcnt, hc, vc, hd, vd;
 	reg	[11:0]  vga_out;
-	reg        pclk, vga_hs, vga_vs;	
+	reg vga_hs, vga_vs;	
 	
 	assign pmod_b[3:0] = vga_out[11:8];
 	assign pmod_a[3:0] = vga_out[7:4];
@@ -36,8 +37,12 @@ module vga_out(
 	assign pmod_a[4] = vga_hs;
 	assign pmod_a[5] = vga_vs;
 
-    always@(posedge clk)
-        pclk <= pclk + 1;
+    clk_wiz_0 clk_wiz_0_inst
+    (
+        // Clock out ports
+        .clk_out1(pclk),     // output clk_out1
+        // Clock in ports
+        .clk_in1(clk));      // input clk_in1
         
 	always@(posedge pclk)
 	begin
