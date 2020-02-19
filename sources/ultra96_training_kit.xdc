@@ -25,6 +25,8 @@ set_property PACKAGE_PIN D3   [get_ports {pmod_c[6]               }];  # "D3.DSI
 
 set_property PACKAGE_PIN L2   [get_ports {clk	                  }];  # "L2.CSI0_D3_P"
 
+set_property IOSTANDARD LVCMOS12 [get_ports {pmod_c}];
+set_property IOSTANDARD LVCMOS12 [get_ports {clk}];
 
 # ----------------------------------------------------------------------------
 # Low-speed expansion connector
@@ -48,14 +50,5 @@ set_property PACKAGE_PIN C7   [get_ports {pmod_b[5]               }];  # "C7.HD_
 set_property PACKAGE_PIN B6   [get_ports {pmod_b[6]               }];  # "B6.HD_GPIO_14"
 set_property PACKAGE_PIN C5   [get_ports {pmod_b[7]               }];  # "C5.HD_GPIO_15"
 
-# ----------------------------------------------------------------------------
-#
-# IOSTANDARD Constraints
-#
-# ---------------------------------------------------------------------------- 
-
-# Set the bank voltage for IO Bank 26 to 1.8V
-set_property IOSTANDARD LVCMOS18 [get_ports -of_objects [get_iobanks 26]];
-
-# Set the bank voltage for IO Bank 65 to 1.2V
-set_property IOSTANDARD LVCMOS12 [get_ports -of_objects [get_iobanks 65]];
+set_property IOSTANDARD LVCMOS18 [get_ports {pmod_a}];
+set_property IOSTANDARD LVCMOS18 [get_ports {pmod_b}];
